@@ -138,31 +138,37 @@ function getMealAPIResponse() {
 }
 let lunchname;
 let lunchphoto;
+let LreadyInMinutes;
 function processLunch() {
     lunchname = lunch.title;
     lunchphoto = lunch.image;
+  LreadyInMinutes = lunch.readyInMinutes;
     document.querySelector('.lunchName').innerHTML = lunchname;
   document.querySelector('.lunchImg').src =lunchphoto;
-  document.querySelector('.lhCalories').innerHTML = "Calories - " + finalBmr/3;
+  document.querySelector('.lhCalories').innerHTML = "Ready In Minutes " + LreadyInMinutes;
 
 }
 let breakfastname;
 let breakfastphoto;
+let BreadyInMinutes;
 function processBreakfast() {
   breakfastname = breakfast.title;
   breakfastphoto = breakfast.image;
+  BreadyInMinutes = breakfast.readyInMinutes;
   document.querySelector('.breakFastName').innerHTML =breakfastname;
   document.querySelector('.breakFastfImg').src =breakfastphoto;
-  document.querySelector('.bfCalories').innerHTML = "Calories - " + finalBmr/3;
+  document.querySelector('.bfCalories').innerHTML = "Ready In Minutes " + BreadyInMinutes;
 }
 let dinnerName;
 let dinnerphoto;
+let readyInMinutes;
 function processDinner() {
   dinnerName = dinner.title;
   dinnerphoto = dinner.image;
+  readyInMinutes = dinner.readyInMinutes;
   document.querySelector('.dinnerName').innerHTML =dinnerName;
   document.querySelector('.dinnerImg').src =dinnerphoto;
-  document.querySelector('.dCalories').innerHTML = "Calories - " +finalBmr/3;
+  document.querySelector('.dCalories').innerHTML = "Ready In Minutes " + readyInMinutes;
 }
 
 
