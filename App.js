@@ -13,8 +13,37 @@ let breakfast;
 let lunch;
 let dinner;
 
+function showError(message) {
+  const errorElement = document.createElement('div');
+  errorElement.textContent = message;
+  errorElement.style.color = 'red';
+  document.querySelector('#input').appendChild(errorElement);
+}
+
+function clearErrors() {
+  const errorElements = document.querySelectorAll('#input div');
+  errorElements.forEach(error => error.remove());
+}
+
 
 function cagender(){
+
+  const heightValue = parseFloat(height.value);
+  if (heightValue < 84) {
+    alert('Please provide a valid Height');
+    return;
+  }
+
+  const weightValue = parseFloat(weight.value);
+  if (weightValue < 18) {
+    alert('Please provide a valid Weight');
+    return;
+  }
+
+  if (!Gender.value || Gender.value === 'Gender') {
+    alert('Please select a gender.');
+    return;
+}
 if(Gender.value ==='Male'){
    bmr = menBmr();
 }else if(Gender.value ==='Female'){
@@ -33,6 +62,7 @@ function womenBmr() {
     const heightValue = parseFloat(height.value);
     const ageValue = parseFloat(Age.value);
 
+    
     if (!isNaN(weightValue) && !isNaN(heightValue) && !isNaN(ageValue)) {
         return 655.1 + (9.563 * weightValue) + (1.850 * heightValue) - (4.676 * ageValue);
        
@@ -55,11 +85,16 @@ function menBmr() {
 }
 
 function activityBmr() {
-    if (activity.value === 'Light') {
+  let activityValue = activity.value;
+
+    if (!activityValue || activityValue === 'Activity') {
+        activityValue = 'Light';
+    }
+    if (activityValue === 'Light') {
         finalBmr = bmr * 1.375;
-    } else if (activity.value === 'Moderate') {
+    } else if (activityValue === 'Moderate') {
         finalBmr = bmr * 1.55;
-    } else if (activity.value === 'Active') {
+    } else if (activityValue === 'Active') {
         finalBmr = bmr * 1.725;
     }
     console.log(finalBmr);

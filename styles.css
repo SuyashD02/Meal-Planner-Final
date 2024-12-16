@@ -1,26 +1,43 @@
 *{
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f9f9f9;
+    
 }
 
 header{
-    width: 100vw;
+    width: 98.9%;
     background-color: tomato;
     padding: 8px;
 }
 header img{
     margin-left: 5%;
 }
-#input{
-    display: flex;
-    justify-content: center;
-    gap: 8%;
-    margin-top: 8%;
-    
-
-
+#input, #dropdown, #mealBtn{
+    max-width: 600px;
+  margin: 20px auto;
+    padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
+.hightDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+label {
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    background: linear-gradient(to right, rgb(255, 80, 49), rgb(255, 197, 110));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
 .styleInput{
     border: none;
     background-color: lightgray;
@@ -28,13 +45,20 @@ header img{
     border-radius: 10px;
     height: 35px;
     width: 200px;
-    
+    box-sizing: border-box;
+    margin-bottom: 5px;
 }
 #dropdown{
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     gap: 15%;
+    padding: 20px;
+    font-size: 1rem;
+    background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 #gender{
     border: none;
@@ -58,14 +82,43 @@ header img{
     margin-top: 50px;
 }
 #styleMealBtn{
-    border: none;
+    /* border: none;
     background-color: tomato;
     padding: 8px;
     border-radius: 20px;
     width: 200px;
     color: white;
-    font-weight: bold;
+    font-weight: bold; */
+
+    width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  color: #ffffff;
+  background-color: tomato;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
+#styleMealBtn:hover {
+    background: #e63900;
+}
+
+.meal-Container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 100%;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.foodtitle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }  
 #cards{
     display: flex;
     justify-content: space-evenly;
@@ -73,24 +126,47 @@ header img{
     gap: 2em;
 }
 .cardContent{
-    background-color: tomato;
+    /* background-color: tomato;
     border-radius: 10px;
     text-align: center;
     position: relative;
     height: 19em;
     width: 13em;
-    
+     */
+     flex: 1;
+     text-align: center;
+     background: #f3f3f3;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
 }
-.cardContent h3,
-.cardContent p{
-    margin-top: 2px;
-    color: white;
-    margin-top: 1em;
+.cardContent img {
+    max-width: 250px;
+    /* width: 200px; */
+    height: 200px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    background: #f3f3f3;
+  }
+.cardContent h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  background: linear-gradient(to right, rgb(255, 80, 49), rgb(255, 197, 110));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.cardContent p {
+  font-size: 1rem;
+  background: #f3f3f3;
+  color: #666;
+  margin-bottom: 15px;
 }
 
 .recipeBtn{
-    padding: 5px;
+    /* padding: 5px;
     margin-top: 1em;
     border: 1px solid white;
     background-color: tomato;
@@ -98,15 +174,20 @@ header img{
     border-radius: 5px;
     width: 100px;
     color: white;
-    font-weight: bolder;
+    font-weight: bolder; */
+    padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background: #4caf50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.foodImg img{
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    width: 13em;
-    height: 10em;
-    
-}
+
+.recipeBtn:hover {
+    background: #45a049;
+  }
+
 .foodtitle{
     display: flex;
     justify-content: space-evenly;
@@ -114,49 +195,64 @@ header img{
     margin: 50px 80px 0px 60px;
     color: tomato;
     font-size: 1.2em;
+    background-color: #ffffff;
 }
-#parentIngredients{
-    background-color: lightgray;
+#recipe-Container {
+    max-width: 1000px;
+    margin: 20px auto;
     padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    margin: 50px;
-    
-    
-}
-.mid{
+  }
+#parentIngredients{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
+  flex-direction: column;
+  gap: 20px;
     
 }
+
 #childIg{
     display: flex;
-    justify-content: space-between;
-    color: tomato;
-    font-weight: bolder;
-    
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
-.ingredients{
-    margin: 5% 0% 0% 12%;
+#childIg h3{
+    background: linear-gradient(to right, rgb(255, 80, 49), rgb(255, 197, 110));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
-.steps{
-    margin: 5% 18% 0% 0%;
+#entries h3{
+    background: linear-gradient(to right, rgb(255, 80, 49), rgb(255, 197, 110));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 .dishName{
     display: flex;
     justify-content: center;
-    color: tomato;
+    align-items: center;
+    background: linear-gradient(to right, rgb(255, 80, 49), rgb(255, 197, 110));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
     font-weight: bolder;
+    font-size: 30px;
 }
 #entries{
     display: flex;
-    justify-content: space-evenly;
-    gap: 10em;
-    margin: 20px 50px 0px 50px;
-    text-align: justify;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px 50px 0px 50px;
+    text-align: justify; */
     
    
 
@@ -165,14 +261,30 @@ header img{
     display: flex;
     justify-content: space-evenly;
     grid-area: 30px;
-    width: 70em;
+    width: 90%;
 }
-#recipeStep{
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-}
-.breakFastfImg{
+/* .breakFastfImg{
     width: 200px;
     height: 150px;
+} */
+
+@media(max-width:600px){
+    header{
+        width: 96%;
+    }
+    #input, #dropdown, #mealBtn{
+        width: 85%;
+    }
+    .meal-Container{
+        width: 90%;
+    }
+    .foodtitle{
+        display: none;
+    }
+    #cards{
+        flex-direction: column;
+    }
+    #recipe-Container{
+        width: 90%;
+    }
 }

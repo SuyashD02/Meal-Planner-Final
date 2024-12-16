@@ -12,18 +12,30 @@
       <img src="assets/logo.png" alt="logo" />
     </header>
     <section id="input">
+      <div class="hightDiv">
+      <label for="height">Height (cm):</label>
       <input
         type="number"
         class="styleInput hight"
         placeholder="Enter Height"
+        oninput="showLabel('Height (cm)')"
       />
+    </div>
+    <div class="hightDiv">
+      <label for="weight">Weight (kg):</label>
       <input
         type="number"
         class="styleInput weight"
         placeholder="Enter Weight"
+        oninput="showLabel('Weight (kg)')"
       />
-      <input type="number" class="styleInput age" placeholder="Enter Age" />
+    </div>
+    <div class="hightDiv">
+      <label for="age">Age:</label>
+      <input type="number" class="styleInput age" placeholder="Enter Age"  oninput="showLabel('Age')" />
+    </div>
     </section>
+    <div id="label-display" style="margin: 10px; font-size: 1rem; font-weight: bold;"></div>
     <section id="dropdown">
       <select name="gender" id="gender">
         <option>Gender</option>
@@ -49,9 +61,7 @@
       </section>
       <section id="cards">
         <section class="cardContent bf-Meal">
-          <div class="foodImg">
             <img class="breakFastfImg" alt="meal image" />
-          </div>
           <h3 class="breakFastName"></h3>
           <p class="bfCalories"></p>
           <a href="#recipe-Container"><button class="recipeBtn" onclick="getBreakFastRecipe() ">
@@ -91,13 +101,13 @@
         <h3 class="dishName"></h3>
         <section id="childIg">
           <h3 class="ingredients">INGREDIENTS</h3>
-          <h3 class="steps">STEPS</h3>
-        </section>
-        <section id="entries">
           <section class="data">
             <ul id="recipeList"></ul>
           </section>
-
+        </section>
+        <section id="entries">
+          
+          <h3 class="steps">STEPS</h3>
           <section class="data">
             <ul id="recipeStep"></ul>
           </section>
